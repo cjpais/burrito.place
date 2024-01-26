@@ -9,17 +9,18 @@ export type BurritoPeer = {
 };
 
 const PEER_NAMES = [
-  "jon",
   "alex",
-  "caroline",
-  "kevin",
   "austin",
+  "baylynne",
+  "caroline",
+  "chandler",
   "dham",
   "gorum",
-  "kristen",
+  "jon",
   "jordan",
-  "chandler",
-  "baylynee",
+  "kevin",
+  "kristen",
+  "psql",
   "cj",
 ];
 
