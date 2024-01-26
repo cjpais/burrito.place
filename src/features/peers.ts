@@ -19,9 +19,8 @@ const PEER_NAMES = [
   "kristen",
   "jordan",
   "chandler",
+  "baylynee",
   "cj",
-  "brain",
-  "test",
 ];
 
 export const PEERS: BurritoPeer[] = PEER_NAMES.map((name) => ({
