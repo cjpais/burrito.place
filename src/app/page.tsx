@@ -1,5 +1,4 @@
 import Entry from "@/components/Entry";
-import Title from "@/components/title";
 import { BurritoPeer, PEERS, getAuth } from "@/features/peers";
 import Link from "next/link";
 import { z } from "zod";
