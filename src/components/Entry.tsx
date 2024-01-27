@@ -35,7 +35,7 @@ const Entry = ({ entry, peer }: { entry: BurritoEntry; peer: BurritoPeer }) => {
             {peer.display}
           </Link>
           <p>•</p>
-          <p>{dayjs.unix(entry.created).format("MMM D, YYYY - h:mma")}</p>
+          <p>{dayjs(entry.created * 1000).format("MMM D, YYYY - h:mma")}</p>
         </div>
         <p>{entry.location}</p>
       </div>
