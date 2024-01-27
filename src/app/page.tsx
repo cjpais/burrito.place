@@ -35,12 +35,13 @@ const fetchLatestBurritos = async () => {
           query:
             "Get me the most recent 10 posts with the title, type, created date in UNIX timestamp, summary, hash, description, and location.",
         }),
+        next: { revalidate: 300 },
       })
         .then((r) => r.json())
         .then((d) => BurritoEntriesSchema.parse(d))
         .then((d): BurritoPeerEntry[] => d.map((e) => ({ entry: e, peer })))
         .catch((e) => {
-          console.error(e);
+          console.error(`error for peer ${peer.name}`, e);
           return null;
         })
     )
