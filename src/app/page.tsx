@@ -68,7 +68,7 @@ export default async function Home() {
           <img src="/header.svg" className="h-24" />
         </Link>
 
-        <div className="flex flex-col gap-32 pt-8">
+        <div className="flex flex-col gap-28 pt-8">
           {burritos.map((burrito, i) => (
             <Entry key={i} entry={burrito.entry} peer={burrito.peer} />
           ))}
