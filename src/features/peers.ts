@@ -43,3 +43,23 @@ export const getAuth = (peer: string) => {
     throw new Error("PEERS_AUTH is not valid JSON");
   }
 };
+
+// SAME WITH THIS
+export const validateAuth = (token: string) => {
+  const peersAuth = process.env.PEERS_AUTH;
+  if (!peersAuth) throw new Error("PEERS_AUTH not set");
+
+  try {
+    const json = JSON.parse(peersAuth);
+    const pairs = Object.entries(json);
+
+    for (let i = 0; i < pairs.length; i++) {
+      const [peer, auth] = pairs[i];
+      if (auth === token) return PEERS.find((p) => p.name === peer);
+    }
+
+    return undefined;
+  } catch (e) {
+    throw new Error("PEERS_AUTH is not valid JSON");
+  }
+};
