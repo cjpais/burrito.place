@@ -20,7 +20,7 @@ const Entry = ({ entry, peer }: { entry: BurritoEntry; peer: BurritoPeer }) => {
     >
       <Link
         href={`${peer.url}/${entry.hash}`}
-        className="font-bold text-3xl hover:underline font-lucky text-center"
+        className="font-lucky text-center text-3xl font-bold hover:underline"
         // className="font-bold text-3xl hover:underline font-lucky underline"
         style={{
           letterSpacing: "0.075em",
@@ -44,7 +44,7 @@ const Entry = ({ entry, peer }: { entry: BurritoEntry; peer: BurritoPeer }) => {
         <video
           src={`${peer.url}/v/${entry.hash}`}
           controls
-          className="rounded-3xl shadow-xl mt-4"
+          className="mt-4 rounded-3xl shadow-xl"
           // className="h-96 w-fit self-center"
           style={
             {
@@ -57,7 +57,7 @@ const Entry = ({ entry, peer }: { entry: BurritoEntry; peer: BurritoPeer }) => {
         <img
           src={`${peer.url}/i/${entry.hash}`}
           alt={entry.description}
-          className="rounded-3xl shadow-xl mt-2"
+          className="mt-2 rounded-3xl shadow-xl"
           style={
             {
               // boxShadow: "0px 0px 35px 4px rgba(0,0,0,.5)",
@@ -65,9 +65,11 @@ const Entry = ({ entry, peer }: { entry: BurritoEntry; peer: BurritoPeer }) => {
           }
         />
       )}
-      {entry.type === "audio" && <p>{entry.summary}</p>}
+      {(entry.type === "audio" || entry.type === "text") && (
+        <p>{entry.summary}</p>
+      )}
       {entry.description && (
-        <p className="italic text-sm">{entry.description}</p>
+        <p className="text-sm italic">{entry.description}</p>
       )}
     </div>
   );
