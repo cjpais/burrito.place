@@ -7,7 +7,9 @@ const ValidateAuthRequestSchema = z.object({
 
 export async function POST(request: Request) {
   const json = await request.json();
+  console.log("raw json", json);
   const { token } = ValidateAuthRequestSchema.parse(json);
+  console.log("parsed token", token);
 
   const peer = validateAuth(token);
 
