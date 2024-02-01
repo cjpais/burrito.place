@@ -22,6 +22,7 @@ const PEER_NAMES = [
   "kristen",
   "psql",
   "savkruger",
+  "taylor",
   "cj",
 ];
 
