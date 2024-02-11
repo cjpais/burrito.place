@@ -93,12 +93,16 @@ const fetchSimilarBurritos = async (query: string, filter?: string) => {
   const peerBurritos = rawBurritos
     .flat()
     .filter((b) => b !== null)
+    // @ts-ignore
     .filter((b) => (filter ? b.entry.type === filter : true))
-    .sort((a, b) => a.entry.distance - b.entry.distance) as BurritoPeerEntry[];
+    .sort(
+      // @ts-ignore
+      (a, b) => a.entry.distance! - b.entry.distance!
+    ) as BurritoPeerEntry[];
 
   const mostSimilar = peerBurritos[0];
   const burritos = peerBurritos.filter((b) => {
-    const similarityGap = b.entry.distance - mostSimilar.entry.distance;
+    const similarityGap = b.entry.distance! - mostSimilar.entry.distance!;
     console.log(similarityGap);
     if (similarityGap < 0.05) {
       return true;
