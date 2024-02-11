@@ -27,7 +27,7 @@ const Entry = ({ entry, peer }: { entry: BurritoEntry; peer: BurritoPeer }) => {
           // textShadow: "0px 0px 16px rgba(0,0,0,.5)",
         }}
       >
-        {entry.title.replaceAll('"', "")}
+        {entry.title ? entry.title.replaceAll('"', "") : "Untitled"}
       </Link>
       <div className="flex flex-col gap-1">
         <div className="flex gap-1 text-xl">
